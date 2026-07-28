@@ -121,7 +121,8 @@ def main():
                 question = json.loads(line)
                 send_poll(CHANNELS[0], question)
                 send_poll(CHANNELS[1], question)
-                send_poll(CHANNELS[2], question)
+                if count%2 == 0:
+                    send_poll(CHANNELS[2], question)
             except Exception as e:
                 print("Invalid JSON:")
                 print(e)
