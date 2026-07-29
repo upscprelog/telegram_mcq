@@ -118,12 +118,13 @@ def main():
             try:
                 question = json.loads(line)
                 send_poll(CHANNELS[0], question)
-                if count%2 == 0:
+                if count%3 == 0:
                     send_poll(CHANNELS[1], question)
+                    
             except Exception as e:
                 print("Invalid JSON:")
                 print(e)
-            if count%4==0:
+            if count%6==0:
                 send_message(CHANNELS[0], OUTRO)
                 send_message(CHANNELS[1], OUTRO)
                 
